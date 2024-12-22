@@ -93,25 +93,6 @@
     צמאה לאהבה
                 </div>
             </div>
-            <div class="media-player">
-                    <div class="upper-section">
-                        <div class="first-icon"><i class="fa-solid fa-rotate-left fa-sm"></i></div>
-                        <div><i class="fa-solid fa-forward-fast"></i></div>
-                        <div @click="togglePlay">
-                            <span v-if="isPlaying"><i class="fa-solid fa-pause fa-2xl"></i></span>
-                            <span v-else><i class="fa-solid fa-play fa-2xl"></i></span>
-                        </div>
-                        <div><i class="fa-solid fa-backward-fast"></i></div>
-                        <div class="last-icon"><i class="fa-solid fa-rotate-left fa-sm"></i></div>
-                    </div>
-                    <div class="bottom-section">
-                        <input type="range" name="volume" />
-                    </div>
-                    <div class="song-info">
-                        <span>{{ linktone.linktone_title }}</span>
-                        <p>{{ linktone.linktone_song_title }}</p>
-                    </div>
-            </div>
         </div>
 
         <div class="lyrics-section" v-if="activeTab == 2">
@@ -125,15 +106,22 @@
                 </div>
             </div>
             <Song :linktone="linktone" />
+            <Song :linktone="linktone" />
+            <Song :linktone="linktone" />
+            <Song :linktone="linktone" />
+        </div>
+        <div class="media-player-container">
+            <MediaPlayer :linktone="linktone" />
         </div>
     </div>
   </template>
   
   <script>
   import Song from './Song.vue'
+  import MediaPlayer from './subCmp/MediaPlay.vue'
   export default {
     name: 'LinktoneDetails',
-    components: {Song},
+    components: {Song, MediaPlayer},
     props: {
         linktone: {
             type: Object,
@@ -184,7 +172,7 @@
     }
     .nav-details {
         display: flex; color: #fff; width: 100%; padding: 20px; justify-content: center; transition: 0.3s ease-in-out;
-        .list-details { display: flex; list-style: none; border-bottom: 1px solid #fff; gap: 30px;
+        .list-details { display: flex; list-style: none; border-bottom: 1px solid #fff; width: 100%; justify-content: space-between;
             .list-item {font-size: 14px; cursor: pointer; padding: 5px; transition: transform 0.3s ease-in-out;
                 &.active {border-bottom: 2px solid #fff;}
             }
@@ -195,7 +183,7 @@
     .details-content {display: flex; justify-content: space-between; align-items: center; padding-inline: 20px;
         .details-content-header {display: flex; flex-direction: column; color: #fff;
             h1 {line-height: 1; font-size: 26px;}
-            p {font-size: 14px;}
+            p {font-size: 14px; opacity: 0.7;}
         }
         .social-container {
             .social {display: flex; gap: 10px; color: #fff;
@@ -227,26 +215,11 @@
         }
     }
     }
-    .media-player {display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; gap: 10px; background-color: #1e212a; color: #fff; padding: 10px; border-radius: 20px;
-    .upper-section {display: flex; justify-content: center; align-items: center; width: 100%; gap: 20px;
-        div{cursor: pointer;}
-      .first-icon,
-      .last-icon{color:#fff; opacity: 0.3;}
-
-    }
-    .bottom-section {display: flex; justify-content: center; width: 100%;
-        input{width: 70%; background-color: #636363; border-radius: 3px; accent-color:#ff1661;
-        }
-    }
-    .song-info {display: flex; justify-content: center; width: 100%; font-size: 14px; gap: 5px; align-items: center;
-        span {font-weight: 700;}
-        p{ font-weight: 500;}
-    }
-    }
     .lyrics-section {position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding-bottom: 10px; color: #fff; 
     .details-content-header {display: flex; align-items: center; justify-content: space-between; width: 100%; padding-bottom: 10px; border-bottom: 1px solid #ffffff79;}
         .song-info {line-height: 1.1;}
     }
+    .media-player-container {position:absolute; left: 45px; bottom: 20px; width: 90%;}
 }
   </style>
 

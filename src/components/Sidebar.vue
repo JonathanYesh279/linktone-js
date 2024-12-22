@@ -95,142 +95,48 @@ export default {
 </script>
 
 <style lang="scss">
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  width: 300px;
-  height: 100vh;
-  background-color: #1e212a;
-  color: #fff;
-  gap: 20px;
-
-
-  .logo {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 180px;
-      height: 111px;
-    }
+.sidebar {display: flex; flex-direction: column; font-size: 14px; width: 300px; height: 100vh; background-color: #1e212a; color: #fff; gap: 20px;
+  .logo {display: flex; justify-content: center;
+    img {width: 180px; height: 111px;}
   }
 
-  .actions {
-    display: flex;
-    justify-content: center;
-
-    .btn-container {
-      border: 1px solid #fff;
-      padding-inline: 5px;
-      border-radius: 20px;
-      
-      .btn {
-        border: none;
-        background: none;
-        padding-inline: 5px;
-        color:#fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &.active {
-          background-color: #fff;
-          color:#1e212a;
-          border-radius: 20px;
-          padding-inline: 10px;
-          font-weight: 700;
+  .actions {display: flex; justify-content: center;
+    .btn-container {border: 1px solid #fff; padding-inline: 5px; border-radius: 20px;
+      .btn {border: none; background: none; padding-inline: 5px; color:#fff; cursor: pointer; transition: all 0.3s ease;
+        &.active {background-color: #fff; color:#1e212a; border-radius: 20px; padding-inline: 10px; font-weight: 700;
         }
       } 
     }
   }
 
-  .list-items {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-
-    .list-item-container {
-      display: flex;
-      align-items: center;
-      padding: 12px 20px 12px 20px;
-      gap: 5px;
-      .icon {
-        display: flex;
-        align-items: center;
-        color: #fff;
-      }
+  .list-items {display: flex; flex-direction: column; list-style: none; font-size: 16px;
+    .list-item-container {display: flex; align-items: center; padding: 12px 20px 12px 20px; gap: 5px;
+      .icon {display: flex; align-items: center; color: #fff;}
     }
-    .list-item {
-      padding-inline: 10px;
-      font-size: 20px;
-      cursor: pointer;
-    }
+    .list-item {padding-inline: 12px; font-size: 20px; cursor: pointer;}
   }
 
-  .playlist-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-
-    h4 {
-      font-size: 20px;
-    }
-
-    .playlist-items {
-      display: flex;
-      flex-direction: column;
-      padding-inline: 20px;
-
-      .playlist-item {
-        font-size: 16px;
-        padding: 3px;
-      }
+  .playlist-container {display: flex; flex-direction: column; gap: 10px; padding: 20px;
+    h4 {font-size: 20px;}
+    .playlist-items {display: flex; flex-direction: column; padding-inline: 20px;
+      .playlist-item {font-size: 16px; padding: 3px;}
     }
   }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
+  @media (max-width: 600px) {display: none;}
 }
 
 @media(min-width: 601px) {
-  .mobile-navbar {
-    display: none;
-  }
+  .mobile-navbar {display: none;}
 }
 
 @media (max-width: 600px) {
-  .mobile-navbar {
-    position: fixed;
-    background-color: #fff;
-    width: 70%;
-    height: 100%;
-    z-index: 2;
-    transition: 0.3s ease-in-out;
-
-
-    &.closed {
-      opacity: 0;height: 0;width: 0;
-      transition: 0.3s ease-in-out;
-
+  .mobile-navbar {position: fixed; background-color: #fff; width: 70%; height: 100%; z-index: 2; transition: 0.3s ease-in-out;
+    &.closed {opacity: 0;height: 0;width: 0; transition: 0.3s ease-in-out;
     }
-
-    .mobile-list {
-      list-style: none;
-      padding: 20px;
-      opacity: 0.6;
-
-      .mobile-list-item {
-        padding: 10px;
-        border-bottom: 1px solid lightgrey;
-      }
+    .mobile-list {list-style: none; padding: 20px; opacity: 0.6;
+      .mobile-list-item {padding: 10px; border-bottom: 1px solid lightgrey;}
     }
-
-    .icon {
-      display: flex;
-      justify-content: flex-end;
-      padding: 10px;
-    }
+    .icon {display: flex; justify-content: flex-end;padding: 10px;}
   }
 }
 
