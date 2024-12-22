@@ -5,9 +5,9 @@
             <div><i class="fa-regular fa-heart"></i></div>
             <div><i class="fa-solid fa-download"></i></div>
             <div><i class="fa-solid fa-sliders"></i></div>
+            <div class="icon"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
     </div>
-    <div class="icon"><i class="fa-solid fa-chevron-up"></i></div>
 </template>
 
 <script>
@@ -24,7 +24,8 @@ props: {
 <style lang="scss" scoped>
     .song-container {display: flex; align-items: center; padding: 10px; justify-content: space-between; width: 100%;
     .actions-container{position: relative; display: flex; align-items: center; gap: 20px;
-    .icon{position: absolute;}
+        div{cursor: pointer;}
+    .icon {padding-right: 10px; cursor: pointer;}
     }
     }
 </style>
